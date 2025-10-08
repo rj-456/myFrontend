@@ -14,11 +14,13 @@ export default function Homepage ({navigation}) {
                     <Button 
                     style={styles.button} 
                     title='Register'
+                    color="#0030c0ff"
                     onPress={() => navigation.navigate('Register')} />
                 </View>
                 <View>
                     <Button 
                     title='View User'
+                    color="#5f85e6ff"
                     onPress={() => navigation.navigate('UserList')}/>
                 </View>
             </View>

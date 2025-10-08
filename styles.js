@@ -1,8 +1,8 @@
 import { StyleSheet } from "react-native";
 
 const COLORS = {
-    background: '#F8F9FA',      // Light Gray
-    surface: '#FFFFFF',         // White
+    background: '#657f99ff',      // Light Gray
+    surface: '#b2cfd8ff',         // White
     primary: '#007BFF',         // Professional Blue
     accent: '#17A2B8',          // Muted Cyan/Teal
     textPrimary: '#212529',     // Almost Black
@@ -19,7 +19,7 @@ export default StyleSheet.create({
     header: {
         fontSize: 32, 
         fontWeight: '700',
-        color: COLORS.primary, // Changed from accent to primary for better contrast
+        color: COLORS.primary, 
         marginBottom: 30,
         textAlign: 'center',
 
@@ -31,7 +31,7 @@ export default StyleSheet.create({
         backgroundColor: COLORS.surface,
         color: COLORS.textPrimary,
         borderWidth: 1,
-        borderColor: '#CED4DA', // A standard light border color
+        borderColor: '#003c77ff', 
         padding: 14,
         marginBottom: 15,
         borderRadius: 8,
@@ -69,7 +69,7 @@ export default StyleSheet.create({
         width: '90%',
         alignSelf: 'center',
         borderWidth: 1,
-        borderColor: '#E9ECEF', // Light border for cards
+        borderColor: '#1f558bff', 
     },
     homeCard: {
         backgroundColor: COLORS.surface,
@@ -88,5 +88,13 @@ export default StyleSheet.create({
         shadowOpacity: 0.7,
         shadowRadius: 8,
         elevation: 8,
+    },
+
+    title: {
+        fontSize: 24,
+        fontWeight: '600',
+        marginBottom: 20,
+        color: COLORS.textPrimary,
+        textAlign: 'center',
     },
 });
