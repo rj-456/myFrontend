@@ -1,14 +1,13 @@
-import {View, Text, FlatList, Alert} from "react-native";
+import {View, Text, FlatList, Alert, Button} from "react-native";
 import axios from "axios";
 import {useState, useEffect} from "react";
 import styles from '../styles';
-import { Button } from "react-native";
 
 export default function UserListPage({navigation}){
     const[users, setUsers] = useState([]);
 
     useEffect(() => {
-        axios.get("http://192.168.56.1:8000/registration/api/users/")
+        axios.get("http://127.0.0.1:8000/registration/api/users/")
         .then((res) => {
             setUsers(res.data)
         })
@@ -23,28 +22,29 @@ export default function UserListPage({navigation}){
     }
 
     const handleDelete = (id) => {
-        Alert.alert(
-            "Confirm Delete",
-            "Are you sure you want to delete?",
-            (
-                {text: "Cancel", style: "cancel"},
-                {
-                    text: "Delete",
-                    style: "destructive",
-                    onPress: () => {
-                        axios.delete(`http://192.168.56.1:8000/registration/api/users/${id}/`)
-                        .then(() => {
-                            Alert.alert("Success", "User deleted successfully");
+        // Alert.alert(
+        //     "Confirm Delete",
+        //     "Are you sure you want to delete?",
+        //     (
+        //         {text: "Cancel", style: "cancel"},
+        //         {
+        //             text: "Delete",
+        //             style: "destructive",
+        //             onPress: () => {
+        //                 axios.delete(`http://127.0.0.1:8000/registration/api/users/${id}/`)
+        //                 .then(() => {
+        //                     Alert.alert("Success", "User deleted successfully");
 
-                })
-                .catch((err) => {
-                    console.error(err);
-                    Alert.alert("Error", "Failed to delete user");
-                });
-                    }
-                }
-            )
-        );
+        //         })
+        //         .catch((err) => {
+        //             console.error(err);
+        //             Alert.alert("Error", "Failed to delete user");
+        //         });
+        //             }
+        //         }
+        //     )
+        // );
+        axios.delete(`http://127.0.0.1:8000/registration/api/users/${id}/`)
     };
 
     return(
